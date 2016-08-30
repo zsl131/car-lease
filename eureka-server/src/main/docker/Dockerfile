@@ -15,9 +15,14 @@ ENV PATH=$MAVEN_HOME/bin:$PATH
 #打包示例项目
 RUN mkdir /var/tmp/webapp
 
+RUN pwd
+
 RUN ls -l /var/tmp/webapp
 
-ADD ./eureka-server /var/tmp/webapp
+ADD ./ /var/tmp/webapp
+
+RUN ls -l /var/tmp/webapp
+
 RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/school-0.0.1-SNAPSHOT.jar /
 
 ENTRYPOINT ["pwd"]
