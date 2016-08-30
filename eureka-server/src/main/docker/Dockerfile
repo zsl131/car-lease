@@ -2,9 +2,8 @@ FROM java:8
 
 MAINTAINER zslin.com "zsl131@hotmail.com"
 
-RUN pwd
+ENTRYPOINT ["pwd"]
 
-ENTRYPOINT ["ll", "target"]
+ENTRYPOINT ["cd", "target"]
 
-
-
+ENTRYPOINT ["ls -a"]
