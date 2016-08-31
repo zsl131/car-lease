@@ -10,5 +10,8 @@ ENTRYPOINT sh /run.sh
 RUN mkdir /work
 WORKDIR /work
 ADD run.sh /work/run.sh
+
+CMD ["ls", "-l"]
+
 ADD eureka-servier-*.jar eureka-server.jar
 CMD ["/bin/bash","./run.sh"]
