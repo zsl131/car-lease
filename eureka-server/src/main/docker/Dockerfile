@@ -13,5 +13,5 @@ ADD run.sh /work/run.sh
 
 CMD ["ls", "-l"]
 
-ADD eureka-servier-*.jar eureka-server.jar
+ADD eureka-server-*.jar /work/eureka-server.jar
 CMD ["/bin/bash","./run.sh"]
