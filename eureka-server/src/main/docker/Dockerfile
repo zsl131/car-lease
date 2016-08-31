@@ -5,13 +5,6 @@ ADD run.sh /run.sh
 
 RUN chmod +x /run.sh
 
+ADD eureka-server-*.jar /eureka-server.jar
+
 ENTRYPOINT sh /run.sh
-
-RUN mkdir /work
-WORKDIR /work
-ADD run.sh /work/run.sh
-
-CMD ["ls", "-l"]
-
-ADD eureka-server-*.jar /work/eureka-server.jar
-CMD ["/bin/bash","./run.sh"]

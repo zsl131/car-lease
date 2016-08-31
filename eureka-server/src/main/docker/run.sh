@@ -1,5 +1,1 @@
-pwd
-
-ll -l
-
-ll -l /work
+java -jar /eureka-server.jar
