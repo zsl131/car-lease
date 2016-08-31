@@ -1,6 +1,14 @@
 FROM java:8
+EXPOSE 8762
+
+ADD run.sh /run.sh
+
+RUN chmod +x /run.sh
+
+ENTRYPOINT sh /run.sh
+
 RUN mkdir /work
 WORKDIR /work
 ADD run.sh /work/run.sh
-ADD package.switch-1.0-SNAPSHOT.jar app.jar
+ADD eureka-servier-*.jar eureka-server.jar
 CMD ["/bin/bash","./run.sh"]
