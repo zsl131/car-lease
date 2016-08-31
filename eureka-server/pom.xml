@@ -80,11 +80,11 @@
                             <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                             <!--<pushImage>true</pushImage>-->
                             <resources>
-                                <resource>
+                                <!--<resource>
                                     <targetPath>/</targetPath>
                                     <directory>bin</directory>
                                     <include>run.sh</include>
-                                </resource>
+                                </resource>-->
                                 <resource>
                                     <targetPath>/</targetPath>
                                     <directory>${project.build.directory}</directory>
