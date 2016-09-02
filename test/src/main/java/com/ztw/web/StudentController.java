@@ -16,7 +16,7 @@ import java.util.List;
  * Created by zsl-pc on 2016/9/2.
  */
 @RestController
-@RequestMapping(value="student")
+@RequestMapping(value="test/student")
 public class StudentController {
 
     @Autowired
