@@ -78,23 +78,12 @@
                         <configuration>
                             <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                             <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
-                            <!--<pushImage>true</pushImage>-->
                             <resources>
-                                <!--<resource>
-                                    <targetPath>/</targetPath>
-                                    <directory>bin</directory>
-                                    <include>run.sh</include>
-                                </resource>-->
                                 <resource>
                                     <targetPath>/</targetPath>
                                     <directory>${project.build.directory}</directory>
                                     <include>${project.build.finalName}.jar</include>
                                 </resource>
-                                <!--<resource>
-                                    <targetPath>/lib/</targetPath>
-                                    <directory>${project.build.directory}/lib</directory>
-                                    <include>*.jar</include>
-                                </resource>-->
                             </resources>
                         </configuration>
                     </plugin>
