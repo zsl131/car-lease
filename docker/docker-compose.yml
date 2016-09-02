@@ -23,6 +23,7 @@ auth-server:
      - "8882:8882"
     links: 
      - eureka-server
+     - mysqldb
      
 test: 
     image: car-lease/test
@@ -30,3 +31,4 @@ test:
      - "7778:7778"
     links:
      - eureka-server
+     - mysqldb
