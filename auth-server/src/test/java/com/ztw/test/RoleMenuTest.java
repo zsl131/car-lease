@@ -34,6 +34,12 @@ public class RoleMenuTest {
     private IMenuService menuService;
 
     @Test
+    public void testMenu() {
+        List<Menu> list = menuService.findByUser(1);
+        System.out.println(list.size());
+    }
+
+    @Test
     public void addRole() {
         Role r = new Role();
         r.setName("测试角色");

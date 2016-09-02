@@ -1,5 +1,7 @@
 package com.ztw.tools;
 
+import java.util.Collection;
+
 /**
  * Created by zsl-pc on 2016/9/1.
  */
@@ -13,6 +15,8 @@ public class NormalResult<T> {
     private Integer code;
 
     private String message;
+
+    private Integer size;
 
     private T datas;
 
@@ -47,6 +51,18 @@ public class NormalResult<T> {
     public NormalResult(Integer code, String message, T datas) {
         this.code = code; this.message = message;
         this.datas = datas;
+        if(datas!=null && datas instanceof Collection) {
+            Integer size = ((Collection) datas).size();
+            this.size = size;
+        }
     }
     public NormalResult() {}
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
 }
