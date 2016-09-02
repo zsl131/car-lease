@@ -16,7 +16,12 @@ api-gateway:
      - eureka-server
      - auth-server
      - test
-     
+   
+mysqldb:
+    images: mysql
+    ports:
+     - "3306:3306"
+   
 auth-server: 
     image: car-lease/auth-server
     ports: 
