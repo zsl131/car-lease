@@ -1,0 +1,32 @@
+eureka-server: 
+    image: car-lease/eureka-server
+    ports: 
+     - "8762:8762"
+     
+config-server: 
+    image: car-lease/config-server
+    ports:
+     - "8881:8881"
+    
+api-gateway: 
+    image: car-lease/api-gateway
+    ports:
+     - "8898:8898"
+    links:
+     - eureka-server
+     - auth-server
+     - test
+   
+auth-server: 
+    image: car-lease/auth-server
+    ports: 
+     - "8882:8882"
+    links: 
+     - eureka-server
+     
+test: 
+    image: car-lease/test
+    ports: 
+     - "7778:7778"
+    links:
+     - eureka-server
