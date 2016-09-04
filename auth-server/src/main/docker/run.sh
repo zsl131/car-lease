@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-java -jar /auth-server.jar
+java -jar /auth-server.jar --spring.profiles.active=dev
