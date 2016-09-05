@@ -11,10 +11,11 @@ import com.ztw.tools.NormalResultTools;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
 /**
  * Created by zsl-pc on 2016/8/31.
  */
-@RestController
+@Controller
 @RequestMapping(value="user")
 public class UserController {
 
@@ -37,7 +38,7 @@ public class UserController {
 
     @ApiOperation(value = "添加用户信息", notes = "根据真实姓名和用户名添加用户信息")
     @RequestMapping(value="addUser", method = RequestMethod.GET)
-    public String addUser(
+    public @ResponseBody String addUser(
             @ApiParam(name = "nickname", value = "用户昵称", required = true)
             @RequestParam String nickname,
             @ApiParam(name = "username", value = "用户名", required = true)
